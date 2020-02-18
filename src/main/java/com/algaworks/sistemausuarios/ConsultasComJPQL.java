@@ -1,10 +1,13 @@
 package com.algaworks.sistemausuarios;
 
 import com.algaworks.sistemausuarios.dto.UsuarioDTO;
+import com.algaworks.sistemausuarios.model.Configuracao;
 import com.algaworks.sistemausuarios.model.Dominio;
 import com.algaworks.sistemausuarios.model.Usuario;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 public class ConsultasComJPQL {
@@ -15,16 +18,126 @@ public class ConsultasComJPQL {
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        //primeirasConsulta(entityManager);
-        //escolhendoORetorno(entityManager);
-       // fazendoProjecoes(entityManager);
-        passandoParametros(entityManager);
+//        primeirasConsulta(entityManager);
+//        escolhendoORetorno(entityManager);
+//        fazendoProjecoes(entityManager);
+//        passandoParametros(entityManager);
+//        fazendoJoins(entityManager);
+//        fazendoLeftJoin(entityManager);
+//        carregamentoComJoinFetch(entityManager);
+//        filtrandoRegistros(entityManager);
+//        utilizandoOperadoresLogicos(entityManager);
+//        ordenandoResultados(entityManager);
+          paginandoResultados(entityManager);
 
         entityManager.close();
         entityManagerFactory.close();
 
     }
 
+    public static void paginandoResultados(EntityManager entityManager){
+        String jpql = "select u from Usuario u";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class)
+                .setFirstResult(0)  //onde vc quer começar a pegar seus resultados. if FirstResult 2 mostra o 3 e o 4
+                .setMaxResults(2);  //em alguns sistemas qtos reg. vc quer ver por página -> MaxResults
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));
+
+    }
+
+    public static void ordenandoResultados(EntityManager entityManager) {
+        String jpql = "select u from Usuario u order by u.nome";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class);
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u -> System.out.println(u.getId() + ", " + u.getNome()));
+
+    }
+
+    public static void utilizandoOperadoresLogicos(EntityManager entityManager){
+        String jpql = "select u from Usuario u where " +
+                " (u.ultimoAcesso > :ontem and u.ultimoAcesso < :hoje) " +
+                " or u.ultimoAcesso is null";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class)
+                .setParameter("ontem", LocalDateTime.now().minusDays(1))
+                .setParameter("hoje", LocalDateTime.now());
+        List<Usuario>  lista = typedQuery.getResultList();
+        lista.forEach(u -> System.out.println(u.getId() + ", "+ u.getNome()));
+
+
+    }
+
+    public static void utilizandoOperadorIn(EntityManager entityManager){
+        String jpql = "select u from Usuario u where u.id in (:ids)";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class)
+                .setParameter("ids", Arrays.asList(1,2));
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));
+    }
+
+
+    public static  void filtrandoRegistros(EntityManager entityManager){
+        //like , is null, is empty, between, >, <, <= , >=, <>
+
+        //Utilizando like, desta forma
+       /* String jpql = "select u from Usuario u where u.nome like :nomeUsuario";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class)
+                .setParameter( "nomeUsuario", "Cal%");
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));*/
+
+        //é igual a esta
+        /*String jpql = "select u from Usuario u where u.nome like concat(:nomeUsuario, '%')";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class)
+                .setParameter( "nomeUsuario", "Cal");
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));*/
+
+        //IS NULL  = select u from Usuario u where u.senha is null
+        //IS EMPTY = select d Dominio d where d.ususarios is empty
+
+        //BETWEEN  = acesso foi entre duas datas
+
+        String jpqlUsandoBet = "select u from Usuario u where u.ultimoAcesso between :ontem and :hoje";
+        TypedQuery<Usuario> typedQueryUsandoBet = entityManager.createQuery(jpqlUsandoBet, Usuario.class)
+                .setParameter( "ontem", LocalDateTime.now().minusDays(1))
+                .setParameter("hoje", LocalDateTime.now());
+        List<Usuario> listaUsandoBet = typedQueryUsandoBet.getResultList();
+        listaUsandoBet.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));
+    }
+
+    public static void carregamentoComJoinFetch(EntityManager entityManager){
+        String jpql = "select u from Usuario u join fetch u.configuracao join fetch u.dominio d";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class);
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));
+    }
+//  todos usuários que tiverem uma relação com configuracao, mas se tiver algum usuario que nao tenha config ele trás mesmo assim
+    public static void fazendoLeftJoin(EntityManager entityManager){
+        String jpql = "select u,c from Usuario u left join u.configuracao c";
+        TypedQuery<Object[]> typedQuery = entityManager.createQuery(jpql, Object[].class);
+        List<Object[]> lista = typedQuery.getResultList();
+
+        lista.forEach(arr ->{
+            // arr[0] == Usuario
+            // arr[1] == Configuracao
+                String out = ((Usuario) arr[0]).getNome();
+                if (arr[1] == null) {
+                    out += ", NULL";
+                }else{
+                    out += ", " + ((Configuracao) arr[1]).getId();
+                }
+        System.out.println(out);
+    });
+}
+    //todos usuário que fazem partes de um determinado dominio
+    public static void fazendoJoins(EntityManager entityManager){
+        //sql -> select u. * from usuario u join dominio d on u.domio_id = d.id;
+        String jpql = "select u from Usuario u join u.dominio d where d.id = 1";
+        TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class);
+        List<Usuario> lista = typedQuery.getResultList();
+        lista.forEach(u-> System.out.println(u.getId() + ", " + u.getNome()));
+
+    }
         public static void passandoParametros(EntityManager entityManager){
 
         String jpql = "select u from Usuario u where u.id = :idUsuario";
