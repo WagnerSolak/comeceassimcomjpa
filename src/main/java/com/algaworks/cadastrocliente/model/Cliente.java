@@ -3,12 +3,12 @@ package com.algaworks.cadastrocliente.model;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table
+//@Entity
+//@Table
 public class Cliente {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+ //   @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "cli_id")
     private Long id;
 

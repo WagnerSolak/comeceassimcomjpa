@@ -11,8 +11,8 @@ public class Exemplo {
 
     public static void main(String[] args) {
 //      as instancias serão criadas
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Clientes-PU");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Clientes-PU");
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 //       buscar registro bd
 
@@ -44,16 +44,17 @@ public class Exemplo {
 //        cliente.setNome(cliente.getNome() + " Alterado"); //alterou a propriedade
 //
 //       alterando dados de objetos não gerenciados (aplicação web por exemplo) obj novo, chamou o merge -> gerencia o obj
-        Cliente cliente = new Cliente();
+/*        Cliente cliente = new Cliente();
         cliente.setId(2L);
         cliente.setNome("Armazem Estrela");
 
         entityManager.getTransaction().begin();
         entityManager.merge(cliente);
-        entityManager.getTransaction().commit();
+        entityManager.getTransaction().commit();*/
+
 
 //      as instancias são encerradas
-          entityManager.close();
-          entityManagerFactory.close();
+//          entityManager.close();
+//          entityManagerFactory.close();
     }
 }
