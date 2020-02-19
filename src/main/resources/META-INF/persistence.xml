@@ -5,9 +5,9 @@
              version="2.2">
 
     <!--    Configuração da unidade de persistência, atributos necessários para a configuração-->
-    <persistence-unit name="Usuarios-PU">
+    <persistence-unit name="Funcionarios-PU">
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cadastrocliente?useTimezone=true&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cadastrocliente?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="javax.persistence.jdbc.driver_class" value="com.mysql.cj.jdbc.Driver" />
