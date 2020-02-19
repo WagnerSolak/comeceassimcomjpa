@@ -1,7 +1,7 @@
 package com.algaworks.sistemausuarios.dto;
 
 import java.util.Objects;
-
+//esta classe foi criado com intuito de utilizar em consulta, e tem que trfegar dados para a rede, e assim cria a classe
 public class UsuarioDTO {
 
     private Integer id;
@@ -10,6 +10,7 @@ public class UsuarioDTO {
 
     private String nome;
 
+    // construtor é necessário para buscar os atributos
     public UsuarioDTO(Integer id, String login, String nome){
         this.id = id;
         this.login = login;

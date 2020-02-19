@@ -32,7 +32,20 @@
       <recent name="C:\Users\wagne\IdeaProjects\live-comece-assim-com-jpa\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConsultasComJPQL">
+  <component name="RunManager" selected="Application.ConsultasComCRITERIA">
+    <configuration name="ConsultasComCRITERIA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.algaworks.sistemausuarios.ConsultasComCRITERIA" />
+      <module name="live-comece-assim-com-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.algaworks.sistemausuarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConsultasComJPQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.algaworks.sistemausuarios.ConsultasComJPQL" />
       <module name="live-comece-assim-com-jpa" />
@@ -61,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConsultasComCRITERIA" />
         <item itemvalue="Application.ConsultasComJPQL" />
         <item itemvalue="Application.Exemplo" />
       </list>
@@ -105,28 +119,28 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="488" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581959754142" />
-    <state width="1323" height="253" key="GridCell.Tab.0.bottom" timestamp="1582067811270">
+    <state width="1323" height="253" key="GridCell.Tab.0.bottom" timestamp="1582127897049">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.bottom/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582067811270" />
+    <state width="1323" height="253" key="GridCell.Tab.0.bottom/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582127897049" />
     <state width="1323" height="248" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730772" />
     <state width="546" height="224" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582061640004" />
-    <state width="1323" height="253" key="GridCell.Tab.0.center" timestamp="1582067811269">
+    <state width="1323" height="253" key="GridCell.Tab.0.center" timestamp="1582127897049">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.center/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582067811269" />
+    <state width="1323" height="253" key="GridCell.Tab.0.center/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582127897049" />
     <state width="1323" height="248" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="546" height="224" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1582061640004" />
-    <state width="1323" height="253" key="GridCell.Tab.0.left" timestamp="1582067811269">
+    <state width="1323" height="253" key="GridCell.Tab.0.left" timestamp="1582127897049">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.left/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582067811269" />
+    <state width="1323" height="253" key="GridCell.Tab.0.left/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582127897049" />
     <state width="1323" height="248" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="546" height="224" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1582061640003" />
-    <state width="1323" height="253" key="GridCell.Tab.0.right" timestamp="1582067811270">
+    <state width="1323" height="253" key="GridCell.Tab.0.right" timestamp="1582127897049">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="253" key="GridCell.Tab.0.right/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582067811270" />
+    <state width="1323" height="253" key="GridCell.Tab.0.right/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582127897049" />
     <state width="1323" height="248" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="546" height="224" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582061640004" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1582034089913">
@@ -136,5 +150,9 @@
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581553548529" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581951087401" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582034089913" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582123868493">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582123868493" />
   </component>
 </project>

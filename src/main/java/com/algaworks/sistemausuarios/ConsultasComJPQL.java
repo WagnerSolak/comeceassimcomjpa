@@ -12,13 +12,13 @@ import java.util.List;
 
 public class ConsultasComJPQL {
 
-    public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory = Persistence
-                .createEntityManagerFactory("Usuarios-PU");
+//    public static void main(String[] args) {
+//        EntityManagerFactory entityManagerFactory = Persistence
+//                .createEntityManagerFactory("Usuarios-PU");
 
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-//        primeirasConsulta(entityManager);
+//        primeirasConsultas(entityManager);
 //        escolhendoORetorno(entityManager);
 //        fazendoProjecoes(entityManager);
 //        passandoParametros(entityManager);
@@ -28,12 +28,12 @@ public class ConsultasComJPQL {
 //        filtrandoRegistros(entityManager);
 //        utilizandoOperadoresLogicos(entityManager);
 //        ordenandoResultados(entityManager);
-          paginandoResultados(entityManager);
+//        paginandoResultados(entityManager);
 
-        entityManager.close();
-        entityManagerFactory.close();
+//        entityManager.close();
+//        entityManagerFactory.close();
 
-    }
+//    }
 
     public static void paginandoResultados(EntityManager entityManager){
         String jpql = "select u from Usuario u";
@@ -190,7 +190,7 @@ public class ConsultasComJPQL {
          }
 
 
-        public static void primeirasConsulta(EntityManager entityManager){
+        public static void primeirasConsultas(EntityManager entityManager){
             String jpql = "select u from Usuario u";
             TypedQuery<Usuario> typedQuery = entityManager.createQuery(jpql, Usuario.class);
             List<Usuario> lista = typedQuery.getResultList();
