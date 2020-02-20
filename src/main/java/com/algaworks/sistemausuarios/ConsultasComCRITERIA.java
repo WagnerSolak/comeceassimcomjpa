@@ -28,7 +28,7 @@ public class ConsultasComCRITERIA {
 //        passandoParametros(entityManager);
 //        fazendoJoins(entityManager);
 //        ordenandoResultados(entityManager);
-          paginandoResultados(entityManager);
+//        paginandoResultados(entityManager);
 
         entityManager.close();
         entityManagerFactory.close();

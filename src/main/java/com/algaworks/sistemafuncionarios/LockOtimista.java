@@ -11,7 +11,7 @@ public class LockOtimista {
     private static final Integer CALL_LIGHTMAN_ID = 1;
 
     public static void main(String[] args) {
-        // inicia a factory
+  /*      // inicia a factory
         EntityManagerFactory entityManagerFactory = Persistence
                 .createEntityManagerFactory("Funcionarios-PU");
 
@@ -44,7 +44,7 @@ public class LockOtimista {
         sessao1.fecharTela();
         sessao2.fecharTela();
 
-        entityManagerFactory.close();
+        entityManagerFactory.close();*/
     }
 
     public static class TelaDeFuncionarios {
