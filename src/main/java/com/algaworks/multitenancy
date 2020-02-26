@@ -1,0 +1,74 @@
+Abordagens Multitenancy
+
+Multienquilino - produto, com a mesma instância vai ser instalada em um servidor
+e com esta mesma serve vários clientes diferentes.
+
+Tipos: (Nos 3 tipos têm uma instância numa máquina)
+
+Por Máquina: um banco de dados para cada máquina;
+Por Schema: uma maquina para aplicação e outra para bd,
+Identificador na tabela: tabelas possuem a coluna TenantID para cada empresa
+
+Qual a melhor alternativa para cada caso?
+
+TIPO -> POR MÁQUINA
+Vantagem:
+* Aplicação continua como antes (desenvolvimento não muda);
+* Suporta customização;
+* Gerenciamento simples se poucos tenants;
+
+Desvantagem:
+* Custo de hardware (mais licenças, mais hardware, mais pessoas[caso muitos tenants])
+* Gerenciamento complex para muitos tenants;
+
+TIPO -> POR SCHEMA
+Vantagem:
+* Aplicação continua como antes (desenvolvimento não muda);
+* Suporta customização;
+* Único servidor - um schema para cada enquilono seu (custo de hardware menor, gerenciamento mais simples);
+
+Desvantagem:
+* Gerenciamento do backup (por schema (ou tenant) Ou faz backup do bd inteiro e por schema, ou faz backup do bd
+inteiro, gera o backup tira o tenant que deu problema, e importa só este.
+
+TIPO -> IDENTIFICADOR
+Vantagem:
+* Mais fácil publicar (não precisa criar vários schemas, ou levantar várias máquinas);
+* Único servidor;
+* Custo de colocar no ar é menor; (melhor abordagem, mais simples);
+* Usada tb quando possui muitos usuários;
+
+Desvantagem:
+* Inclui esforço extra (todas query mudarão, controle estoque, usa find método, já não pode ser usada assim; pode trazer prod. de outros clientes, caso não seja tratado isso);
+* Gerenciamento do backup (por tenant [faz backup do banco inteiro, se precisar voltar, você inicia uma máquina nova, separa os dados do tenant que você quer voltar, depois substitui isto no bd]);
+
+
+Requisitos do projeto
+
+Custo de infraestrutura:
+* Mais complexo, mais caro o desenvolvimento.
+* Compartilhado mais barato é a infraestrutura pois utiliza menos servidores, menos licenças e infra mais simples);
+
+Segurança:
+* Mais compartilhado, maior o risco de um inquilino acessar dados de outro;
+
+Leis e regulamentação:
+* Mais regulamentação, mais isolado; Ex.: cliente mais auditado por exemplo, melhor ser de máquina, pois entrega dados da máquina,
+e seus dados serão auditados.
+
+Números: -> qtde de acessos, qtde de clientes, qtde de dados que o banco vai salvar, qtde de acessos
+* qtde de tenants: quanto mais tenants, mais preferível o ambiente compartilhado (identificador) preços acessível, muitos clientes
+* espaço GB, TB: quanto maior for o espaço necessário, melhor se o ambiente for isolado (por máquina)
+* qtde de acessos: quanto mais acessos sua aplicação forem ter, mais vantagens apareceram em ambientes isolados.
+
+Customizações -> clientes pedem alterações no software para atender eles
+* é mais fácil customizar em ambientes isolados.
+
+
+Como descobrir/associar um tenant ?
+Como na apliação (fonte) preciso pegar o tenant para fazer a a cosulta da forma correta?
+* cabeçalho HTTP -> X-tenant: 1  pega o tenant pelo cabeçalho
+* através da URI -> localhost:8080/{tenant}/produto/id=1
+* através do domínio -> {tenant}.localhost:8080 (pega tenant pelo dominio apontando para sua aplicação) precisa de um interceptador para GetServeletServer por ex.; e poderá usar para usar para consultar.
+
+
