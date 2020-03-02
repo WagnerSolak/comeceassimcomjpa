@@ -139,10 +139,10 @@
     </state>
     <state x="275" y="42" key="#Notifications/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582063744517" />
     <state x="275" y="42" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1582060849337" />
-    <state x="441" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582744753767">
+    <state x="441" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582808439174">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="441" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582744753767" />
+    <state x="441" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582808439174" />
     <state x="441" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581693237676" />
     <state x="488" y="67" key="#com.intellij.ide.util.MemberChooser" timestamp="1582205115292">
       <screen x="0" y="0" width="1366" height="768" />
@@ -177,12 +177,12 @@
     <state width="1323" height="342" key="GridCell.Tab.0.right/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582226790775" />
     <state width="1323" height="248" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="1323" height="342" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582244490019" />
-    <state x="379" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1582723786212">
+    <state x="379" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1583160559586">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581690199969" />
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581553548529" />
-    <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582723786212" />
+    <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583160559586" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581951087401" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582034089913" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582123868493">

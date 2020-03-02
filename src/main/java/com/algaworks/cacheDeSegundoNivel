@@ -1,0 +1,78 @@
+Cache de Segundo Nível com JPA, Hibernate e EhCache
+
+
+
+Vantagens e Desvantagens:
+* Simples
+* Performance
+* Não faz cache de relacionamentos
+* Nem de queries
+
+Cache de primeiro nível, fica na memória da instância do EntityManager
+Cache de segundo nível,  compartilhado em todas instâncias de EntityManager
+
+Configuração do JPA:
+
+QUANDO CONFIGURADO NO  persistence.xml:
+
+Configuração -> javax.persistence.sharedCache.mode
+UNSPECIFIED       (Padrão, A implementação decide) quando não informado esta é a padrão
+NONE              não acioar o cache de segundo nível
+ALL               inclui todas as entidades
+DISABLE-SELECTIVE desabilita todas entidades que estiverem com cache e valor do cacheable false
+ENABLE_SELECTIVE  fazer cahce de todas entidades que estiverem com cacheable valor true
+
+Configuração -> javax.cache.region.factory_class  Para dizer ao Hibernate de onde ele irá tirar o cache
+
+org.hibernate.testing.cache.CachingRegionFactory        Bom para quem testa com JUnity
+org.hibernate.cache.jcache.internal.JCacheRegionFactory Onde irá deixar ela, se tiver ela e só um provedor, ele já reconhece ela, melhor deixar explicita
+
+Configuração -> hibernate.javax.cache.provider
+org.ehcachejsr107.EhcacheCaching
+
+Configuração -> hibernate.javax.cache.uri
+ehcache.xml  Serve para configurar o arquivo
+
+JCache -> API padrão do java de cache
+
+QUANDO CONFIGURADO COM A ANOTAÇÃO @Cacheable(true/false)
+
+
+CONFIGURAÇÃO DO ARQUIVO: ehcache.xml
+
+
+	<service>
+		<jsr107:defaults default-template="padrao" /> Padrão para todas as nossas entidades
+	</service>
+
+
+	<cache alias="com.algaworks.curso.jpa.ecommerce.model.Categoria" uses-template="padrao"> caminho exato da Categoria do modelo utilizado
+		<expiry>
+			<tti unit="seconds">2</tti>     Tempo que ele sobrevive sem ninguém acessar esse registro (time to idle)
+		</expiry>                           Se ficar clicando de 1 em 1 segundo ele ira buscar do cache e não do banco
+	</cache>
+
+
+	<cache-template name="padrao">                    Se trata de configuração padrão
+		<key-type>java.lang.Object</key-type>     Cache será um objeto
+		<value-type>java.lang.Object</value-type> Valor será um objeto
+
+		<expiry>
+			<ttl unit="seconds">30</ttl>      Expiração ocorrerá em 1 minuto (time to live) * pode variar de acordo com a aplicação/necessidade
+		</expiry>
+
+		<heap unit="entries">1000</heap>	  Quantidade de objetos que estarão na memória  * pode variar de acordo com a aplicação/necessidade
+	</cache-template>
+
+
+ADICIONANDO NO CACHE:
+find    Busca do banco e joga no cache de segundo nivel,
+JPQL
+Criteria
+
+Gerenciamento manual
+javax.persistence.Cache:
+* EntityManagerFactory::getCache   Pega uma instância
+* evictAll   Limpa tudo que está no cache, no cache compartilhado
+* evict      Limpar somente um tipo de entidade, ou uma entidade específica, todas as instâncias de uma inst. específica
+* contains   Verificar se alguma entidade está no cache compartilhado ou não;
