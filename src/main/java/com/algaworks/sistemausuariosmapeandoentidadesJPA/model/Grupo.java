@@ -1,19 +1,21 @@
-package com.algaworks.sistemausuarios.model;
+package com.algaworks.sistemausuariosmapeandoentidadesJPA.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
-//@Entity
-public class Dominio {
+@Entity
+@Table(name = "grupo",
+        uniqueConstraints = { @UniqueConstraint(name = "un_nome", columnNames = { "nome" }) })
+public class Grupo {
 
     @Id
     private Integer id;
 
+    @Column(length = 100, nullable = false)
     private String nome;
 
-
+    @ManyToMany(mappedBy = "grupos")
+    private List<Usuario> usuarios;
 
     public Integer getId() {
         return id;
@@ -31,23 +33,12 @@ public class Dominio {
         this.nome = nome;
     }
 
-    @OneToMany(mappedBy = "dominio")
-    private List<Usuario> usuarios;
-
-   public List<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Dominio dominio = (Dominio) o;
+        Grupo dominio = (Grupo) o;
 
         return id.equals(dominio.id);
     }
@@ -56,5 +47,4 @@ public class Dominio {
     public int hashCode() {
         return id.hashCode();
     }
-
 }

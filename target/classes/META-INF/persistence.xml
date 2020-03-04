@@ -5,9 +5,9 @@
              version="2.2">
 
     <!--    Configuração da unidade de persistência, atributos necessários para a configuração-->
-    <persistence-unit name="Blog-PU">
+    <!--<persistence-unit name="Blog-PU">
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cadastrocliente?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cadastrousuarios?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="" />
             <property name="javax.persistence.jdbc.driver_class" value="com.mysql.cj.jdbc.Driver" />
@@ -20,8 +20,67 @@
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
 
-            <property name="javax.persistence.lock.timeout" value="3000"/>
+            <property name="javax.persistence.lock.timeout" value="3000"/>-->
+
+
+    <!-- Configurações aula Mapeando Entidades JPA para geração de schea do banco de dados -->
+    <persistence-unit name="Usuarios-PU">
+        <properties>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost/cadastrousuarios?createDatabaseIfNotExist=true&amp;useTimezone=true&amp;serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
+
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+
+            <!--
+            // os arquivos abaixos foram criados na classe ExecutarDDL
+
+            //dropar e criar bco
+           <property name="javax.persistence.schema-generation.database.action"
+                      value="drop-and-create"/>
+
+           //usa metadados e depois script
+           <property name="javax.persistence.schema-generation.create-source"
+                    value="metadata-then-script"/>
+
+            //usa metadados e depois script
+           <property name="javax.persistence.schema-generation.drop-source"
+                      value="metadata-then-script"/>
+
+            // usar script de criação
+           <property name="javax.persistence.schema-generation.create-script-source"
+            value="META-INF/banco-de-dados/script-criacao.sql"/>
+
+           // usar script de remoção
+           <property name="javax.persistence.schema-generation.drop-script-source"
+                    value="META-INF/banco-de-dados/script-remocao.sql"/>
+
+            // carrega dados
+           <property name="javax.persistence.sql-load-script-source"
+                      value="META-INF/banco-de-dados/carregar-dados.sql" />
+
+            //os arquivos estão na classe ExportarDDL
+           <property name="javax.persistence.schema-generation.scripts.action"
+                      value="drop-and-create"/>
+
+           // pega tudo que têm nos metadados e junta com esse script de criação e exporta nesse arquivo
+          <property name="javax.persistence.schema-generation.scripts.create-target"
+                    value="C:/dev/scriptsParaIntellij/script-criacao.sql"/>
+
+          // pega tudo que têm nos metadados e junta com esse script de remoção e exporta nesse arquivo
+           <property name="javax.persistence.schema-generation.scripts.drop-target"
+                     value="C:/dev/scriptsParaIntellij/script-remocao.sql"/>
+
+        -->
+
         </properties>
+
     </persistence-unit>
 
 </persistence>

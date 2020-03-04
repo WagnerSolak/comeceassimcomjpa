@@ -1,19 +1,21 @@
-package com.algaworks.sistemausuarios.model;
+package com.algaworks.sistemausuariosmapeandoentidadesJPA.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
-//@Entity
+@Entity
+@Table(name = "dominio",
+        uniqueConstraints = { @UniqueConstraint(name = "un_nome", columnNames = { "nome" }) })
 public class Dominio {
 
     @Id
     private Integer id;
 
+    @Column(length = 100, nullable = false)
     private String nome;
 
-
+    @OneToMany(mappedBy = "dominio")
+    private List<Usuario> usuarios;
 
     public Integer getId() {
         return id;
@@ -31,10 +33,7 @@ public class Dominio {
         this.nome = nome;
     }
 
-    @OneToMany(mappedBy = "dominio")
-    private List<Usuario> usuarios;
-
-   public List<Usuario> getUsuarios() {
+    public List<Usuario> getUsuarios() {
         return usuarios;
     }
 
@@ -56,5 +55,4 @@ public class Dominio {
     public int hashCode() {
         return id.hashCode();
     }
-
 }

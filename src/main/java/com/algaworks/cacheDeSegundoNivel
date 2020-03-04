@@ -59,7 +59,7 @@ CONFIGURAÇÃO DO ARQUIVO: ehcache.xml
 
 		<expiry>
 			<ttl unit="seconds">30</ttl>      Expiração ocorrerá em 1 minuto (time to live) * pode variar de acordo com a aplicação/necessidade
-		</expiry>
+		</expiry>                             Mesmo TTI estando configurado, após 30 segundos ela será removida do cache e a próxima consulta será buscada do banco
 
 		<heap unit="entries">1000</heap>	  Quantidade de objetos que estarão na memória  * pode variar de acordo com a aplicação/necessidade
 	</cache-template>

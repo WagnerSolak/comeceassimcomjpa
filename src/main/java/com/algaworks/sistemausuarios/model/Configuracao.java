@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import java.util.Objects;
-@Entity
+//@Entity
 public class Configuracao {
 
     @Id

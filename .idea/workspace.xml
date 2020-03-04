@@ -26,13 +26,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/algaworks/images" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wagne\IdeaProjects\live-comece-assim-com-jpa\src\main\java\com\algaworks\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wagne\IdeaProjects\live-comece-assim-com-jpa\src\main\java\com\algaworks\images" />
       <recent name="C:\Users\wagne\IdeaProjects\live-comece-assim-com-jpa\src\main\resources\META-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LockPessimista">
+  <component name="RunManager" selected="Application.ExportarDDL">
     <configuration name="ConsultasComCRITERIA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.algaworks.sistemausuarios.ConsultasComCRITERIA" />
       <module name="live-comece-assim-com-jpa" />
@@ -46,25 +51,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsultasComJPQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.algaworks.sistemausuarios.ConsultasComJPQL" />
+    <configuration name="ExportarDDL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.algaworks.sistemausuariosmapeandoentidadesJPA.ExportarDDL" />
       <module name="live-comece-assim-com-jpa" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.algaworks.sistemausuarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Exemplo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.algaworks.cadastrocliente.Exemplo" />
-      <module name="live-comece-assim-com-jpa" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.algaworks.cadastrocliente.*" />
+          <option name="PATTERN" value="com.algaworks.sistemausuariosmapeandoentidadesJPA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,13 +90,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.algaworks.sistemausuariosmapeandoentidadesJPA.Main" />
+      <module name="live-comece-assim-com-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.algaworks.sistemausuariosmapeandoentidadesJPA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExportarDDL" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.LockPessimista" />
         <item itemvalue="Application.LockOtimista" />
         <item itemvalue="Application.ConsultasComCRITERIA" />
-        <item itemvalue="Application.ConsultasComJPQL" />
-        <item itemvalue="Application.Exemplo" />
       </list>
     </recent_temporary>
   </component>
@@ -153,36 +158,40 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="324" y="309" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582204935570" />
-    <state width="1323" height="342" key="GridCell.Tab.0.bottom" timestamp="1582244490019">
+    <state x="464" y="243" width="582" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583169190379">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="342" key="GridCell.Tab.0.bottom/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582226790775" />
+    <state x="464" y="243" width="582" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583169190379" />
+    <state width="1323" height="241" key="GridCell.Tab.0.bottom" timestamp="1583334499254">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="241" key="GridCell.Tab.0.bottom/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583334499254" />
     <state width="1323" height="248" key="GridCell.Tab.0.bottom/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730772" />
     <state width="1323" height="342" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582244490019" />
-    <state width="1323" height="342" key="GridCell.Tab.0.center" timestamp="1582244490019">
+    <state width="1323" height="241" key="GridCell.Tab.0.center" timestamp="1583334499254">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="342" key="GridCell.Tab.0.center/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582226790775" />
+    <state width="1323" height="241" key="GridCell.Tab.0.center/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583334499254" />
     <state width="1323" height="248" key="GridCell.Tab.0.center/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="1323" height="342" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1582244490019" />
-    <state width="1323" height="342" key="GridCell.Tab.0.left" timestamp="1582244490019">
+    <state width="1323" height="241" key="GridCell.Tab.0.left" timestamp="1583334499254">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="342" key="GridCell.Tab.0.left/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582226790774" />
+    <state width="1323" height="241" key="GridCell.Tab.0.left/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583334499254" />
     <state width="1323" height="248" key="GridCell.Tab.0.left/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="1323" height="342" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1582244490019" />
-    <state width="1323" height="342" key="GridCell.Tab.0.right" timestamp="1582244490019">
+    <state width="1323" height="241" key="GridCell.Tab.0.right" timestamp="1583334499254">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="342" key="GridCell.Tab.0.right/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1582226790775" />
+    <state width="1323" height="241" key="GridCell.Tab.0.right/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583334499254" />
     <state width="1323" height="248" key="GridCell.Tab.0.right/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581992730771" />
     <state width="1323" height="342" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582244490019" />
-    <state x="379" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1583160559586">
+    <state x="379" y="197" key="com.intellij.ide.util.TipDialog" timestamp="1583243187041">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1581690199969" />
     <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581553548529" />
-    <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583160559586" />
+    <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/-1360.0.1360.768@0.0.1366.768" timestamp="1583243187041" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768/1366.0.1360.768@0.0.1366.768" timestamp="1581951087401" />
     <state x="379" y="197" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582034089913" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1582123868493">
